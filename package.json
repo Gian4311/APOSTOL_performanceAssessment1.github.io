@@ -1,0 +1,25 @@
+{
+  "name": "apostolperformanceassessment1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "compile": "node dev/compile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gian4311/APOSTOL_performanceAssessment1.github.io.git"
+  },
+  "author": "Gian Tristian Gomez Apostol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gian4311/APOSTOL_performanceAssessment1.github.io/issues"
+  },
+  "homepage": "https://github.com/Gian4311/APOSTOL_performanceAssessment1.github.io#readme",
+  "dependencies": {
+    "esbuild": "^0.20.0",
+    "esbuild-plugin-tsc": "^0.4.0",
+    "typescript": "^5.3.3"
+  }
+}
