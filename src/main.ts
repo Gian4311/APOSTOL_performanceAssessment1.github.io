@@ -291,7 +291,7 @@ $( async () => {
     ;
     scroller.css( `height`, `calc( 100vh * ${ lengthSlides } * ${ heightScroller } )` );
     let slideIndex: number = undefined as unknown as number;
-    $( window ).on( "scroll", () => {
+    $( window ).on( "scroll", async () => {
 
         let offset: percentage = (
             lengthSlides * ( $( window ).scrollTop() ?? 0 )
@@ -330,7 +330,10 @@ $( async () => {
                 $( `#info h1` ).text( title );
                 $( `#coordinates` ).text( `${ y }° N, ${ x }° E` );
                 $( `#description` ).text( description ?? `` );
-                $( `#regionImg img` ).attr( `src`,  src );
+                const newImg = new Image();
+                newImg.src = src;
+                await newImg.decode();
+                $( `#regionImg img` ).replaceWith( newImg );
 
             }
 
