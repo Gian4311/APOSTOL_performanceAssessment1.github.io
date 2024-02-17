@@ -20,6 +20,11 @@
   "dependencies": {
     "esbuild": "^0.20.0",
     "esbuild-plugin-tsc": "^0.4.0",
+    "jquery": "^3.7.1",
+    "ts-utils": "github:SpectralQuill/ts-utils",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.29"
   }
 }

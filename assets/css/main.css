@@ -1,0 +1,61 @@
+:root {
+
+  --knifeWidth: 0.25;
+  --knifeHeight: 1;
+  --mapContainerFr: calc( 9 / 12 )
+
+}
+
+#dragon {
+
+  display: block;
+  width: 50%;
+  height: 50%;
+  background: crimson;
+  position: fixed;
+  top: 0;
+  left: 50%;
+
+}
+
+body {
+
+  margin: 0;
+
+}
+
+#mapContainer {
+  
+  background: url( "../img/tableBackground2.jpg" );
+  /* rotate: -15deg; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+}
+
+#map {
+
+  width: 100%;
+
+}
+
+#scroller {
+
+  display: block;
+  width: 100%;
+
+}
+
+#knifeContainer {
+
+  display: none;
+
+}
+
+#infoBox {
+
+  display: none;
+
+}

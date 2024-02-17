@@ -1,0 +1,10 @@
+pirates of the carribean background music
+nav on left
+map on right
+    start! button
+knife on top right
+floating slide on right
+    close button on top right
+    next button on bottom right
+    image on left
+    text on right

@@ -1,0 +1,113 @@
+.zoom-in-out-box {
+  animation: zoom-in-zoom-out 5s ease 1;
+}
+  
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes knifeContainerStab {
+
+  from {
+    
+    /* width: calc( 100% * var( --knifeWidth ) );
+    height: calc( 100vw * var( --mapContainerFr ) * var( --knifeWidth ) * 1440 / 443 ); */
+      /* ( 9 / 12 ) should be 1 when on mobile */
+    /* transform: rotateZ( 60deg ) perspective( none ) rotateX( -45deg );
+    top: calc( 100vw * var( --mapContainerFr ) * var( --knifeWidth ) * 1440 / 443 * 0.25 * -1 );
+    right: calc( 100vw * var( --mapContainerFr ) * var( --knifeWidth ) * 0.4 * -1 ); */
+
+    height: calc( 100% * var( --knifeHeight ) );
+    /* height: 100% * var( --knifeHeight ) * 443 / 1440; */
+    transform: rotateZ( 60deg ) perspective( none ) rotateX( -45deg );
+    bottom: calc( 50% - 100vh * var( --knifeHeight ) * 0.4 );
+    left: calc( 100% - 100vh * var( --knifeHeight ) * 443 / 1440 * 1.25 );
+
+  }
+
+  to {
+
+    width: 50%;
+    height: calc( 100vw * 9 / 12 * 0.5 * 1440 / 443 );
+    transform: rotateZ( 60deg ) perspective( 200px ) rotateX( -45deg );
+    /* top: 50%; */
+    /* right: 30%; */
+
+  }
+
+}
+
+#knifeContainer {
+  
+  position: absolute;
+  animation-name: knifeContainerStab;
+  /* animation-duration: 500ms; */
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+
+}
+
+@keyframes knifeLimiterStab {
+
+  from {
+
+    height: 100%;
+
+  }
+
+  to {
+
+    height: 80%;
+
+  }
+  
+}
+
+#knifeLimiter {
+
+  overflow: hidden;
+  animation-name: knifeLimiterStab;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+
+}
+
+@keyframes knifeImgStab {
+
+  from {
+
+    height: 100%;
+
+  }
+
+  to {
+
+    height: 125%;
+
+  }
+  
+}
+
+#knife {
+
+  animation-name: knifeImgStab;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+
+}
