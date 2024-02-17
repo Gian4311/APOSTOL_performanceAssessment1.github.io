@@ -52,24 +52,104 @@ function getSlidesData(): slideData[] {
         {
             title: `National Capital Region (NCR)`,
             coordinates: [ 121.0223, 14.6091 ],
-            description: "Also known as Metropolitan Manila, is the country’s political, economic, and educational center. The smallest region in the Philippines, it is the most densely populated region which is home to over 13 million Filipinos.",
+            description: `Also known as Metropolitan Manila, is the country’s political, economic, and educational center. The smallest region in the Philippines, it is the most densely populated region which is home to over 13 million Filipinos.`,
             img: "ncr.webp"
         },
         {
             title: `Cordillera Administrative Region (CAR)`,
             coordinates: [ 121.1719, 17.3513 ],
-            description: "Is composed of six provinces—Abra, Apayao, Benguet, Ifugao, Kalinga, and Mountain Province; and two cities—Baguio City and Tabuk in Kalinga Province.",
+            description: `Is composed of six provinces—Abra, Apayao, Benguet, Ifugao, Kalinga, and Mountain Province; and two cities—Baguio City and Tabuk in Kalinga Province.`,
             img: `car.jpg`
         },
         {
             title: `Ilocos Region (Region I)`,
             coordinates: [ 120.6200, 16.0832 ],
-            description: "3"
+            description: `Is composed of four provinces—Ilocos Norte, Ilocos Sur, La Union and Pangasinan; and of nine cities—Alaminos, Batac, Candon, Laoag, San Carlos, San Fernando, Urdaneta, Vigan, and Dagupan.`,
+            img: `region1.jpg`
         },
         {
             title: `Cagayan Valley (Region II)`,
             coordinates: [ 121.8107, 16.9754 ],
-            description: "4"
+            description: `Is composed of five (5) provinces –Batanes, Cagayan, Isabela, Quirino, and Nueva Vizcaya; and four cities: Tuguegarao, Cauayan, Ilagan, and Santiago.`,
+            img: `region2.jpg`
+        },
+        {
+            title: `Central Luzon (Region III)`,
+            coordinates: [ 120.7120, 15.4828 ],
+            description: `Is composed of seven provinces—Aurora, Bataan, Bulacan, Nueva Ecija, Pampanga, Tarlac, and Zambales; and fourteen cities.`,
+            img: `region3.jpg`
+        },
+        {
+            title: `Calabarzon (Region IV-A)`,
+            coordinates: [ 121.0794, 14.1008 ],
+            description: `Is composed of the provinces of Cavite, Laguna, Batangas, Rizal, and Quezon.`,
+            img: `region4A.jpg`
+        },
+        {
+            title: `Southwestern Tagalog Region (Mimaropa) (Region IV-B)`,
+            coordinates: [ 118.7365, 9.8432 ],
+            description: `Is composed of the provinces of Mindoro (Occidental and Oriental), Marinduque, Romblon, and Palawan. There are two cities—Calapan and Puerto Princesa—and 71 municipalities in the entire region.`,
+            img: `region4B.jpg`
+        },
+        {
+            title: `Bicol Region (Region V)`,
+            coordinates: [ 123.4137, 13.4210 ],
+            description: `Is composed of four contiguous provinces: Albay, Camarines Sur, Camarines Norte, and Sorsogon; two island provinces of Catanduanes and Masbate; and seven cities namely, Legazpi, Naga, Iriga, Tabaco, Ligao, Sorsogon, and Masbate.`,
+            img: `region5.jpg`
+        },
+        {
+            title: `Western Visayas (Region VI)`,
+            coordinates: [ 122.5373, 11.0050 ],
+            description: `Is composed of six provinces: Aklan, Antique, Capiz, Guimaras, Iloilo, and Negros Occidental.`,
+            img: `region6.png`
+        },
+        {
+            title: `Central Visayas (Region VII)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
+        },
+        {
+            title: `Eastern Visayas (Region VIII)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
+        },
+        {
+            title: `Zamboanga Peninsula (Region IX)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
+        },
+        {
+            title: `Northern Mindanao (Region X)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
+        },
+        {
+            title: `Davao Region (Region XI)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
+        },
+        {
+            title: `Soccsksargen (Region XII)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
+        },
+        {
+            title: `Caraga (Region XIII)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
+        },
+        {
+            title: `Bangsamoro (BARMM)`,
+            coordinates: [ 0, 0],
+            description: ``,
+            img: ``
         }
     ];
 
