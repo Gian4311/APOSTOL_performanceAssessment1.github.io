@@ -105,51 +105,51 @@ function getSlidesData(): slideData[] {
         },
         {
             title: `Central Visayas (Region VII)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 124.0641, 9.8169 ],
+            description: `Is composed of four provinces: Cebu, Bohol, Negros Oriental, and Siquijor.`,
+            img: `region7.jpg`
         },
         {
             title: `Eastern Visayas (Region VIII)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 125.0388, 12.2446 ],
+            description: `Is composed of six provincial offices in Leyte, Southern Leyte, Biliran, Samar, Eastern Samar, and Northern Samar.`,
+            img: `region8.webp`
         },
         {
             title: `Zamboanga Peninsula (Region IX)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 123.2588, 8.1541 ],
+            description: `Is composed of five provincial offices: Zamboanga City, Zamboanga del Sur, Zamboanga del Norte, Zamboanga Sibugay, and Isabela City.`,
+            img: `region9.jpg`
         },
         {
             title: `Northern Mindanao (Region X)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 124.6857, 8.0202 ],
+            description: `Is composed of two cities—Cagayan de Oro City and Iligan City; and five provinces—Camiguin, Misamis Oriental, Lanao del Norte, Bukidnon and Misamis Occidental.`,
+            img: `region10.jpg`
         },
         {
             title: `Davao Region (Region XI)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 126.0893, 7.3042 ],
+            description: `It is composed of five provinces – Davao del Sur, Davao del Norte, Davao Oriental, Davao Occidental and Compostela Valley. It also boasts of six cities – Davao, Tagum, Island Garden City of Samal, Panabo, Mati and Digos.`,
+            img: `region11.jpg`
         },
         {
             title: `Soccsksargen (Region XII)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 124.6857, 6.2707 ],
+            description: `Is composed of four provinces—North Cotabato, South Cotabato, Sarangani Province, and Sultan Kudarat; and five cities—Koronadal, Tacurong, General Santos, Kidapawan, and Cotabato.`,
+            img: `region12.jpg`
         },
         {
             title: `Caraga (Region XIII)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 125.7407, 8.8015 ],
+            description: `Is composed of five provinces—Agusan del Norte, Agusan del Sur, Surigao del Norte, Surigao del Sur, and Dinagat Islands; and six cities—Butuan, Surigao, Bislig, Tandag, Cabadbaran, and Bayugan.`,
+            img: `caraga.webp`
         },
         {
             title: `Bangsamoro (BARMM)`,
-            coordinates: [ 0, 0],
-            description: ``,
-            img: ``
+            coordinates: [ 124.24514, 7.19708 ],
+            description: `Is an autonomous region located in the southern Philippines. It composed of five provinces: Basilan, Lanao del Sur, Maguindanao, Sulu, and Tawi‑Tawi.`,
+            img: `barmm.jpg`
         }
     ];
 
@@ -228,7 +228,7 @@ function getKeyframesInfoBox( map: MapImage, slidesData: slideData[] ): Keyframe
                 },
                 {
                     scale: 0,
-                    offset: getOffset( slidesData, index + 0.75 )
+                    offset: getOffset( slidesData, index + 0.9 )
                 },
                 {
                     scale: 1,
@@ -249,7 +249,7 @@ function getKeyframesInfoBox( map: MapImage, slidesData: slideData[] ): Keyframe
         },
         end2: Keyframe = {
             scale: 0,
-            offset: getOffset( slidesData, length + 0.75 )
+            offset: getOffset( slidesData, length + 0.9 )
         },
         end3: Keyframe = {
             scale: 1,
@@ -290,6 +290,7 @@ $( async () => {
         heightScroller: percentage = 3
     ;
     scroller.css( `height`, `calc( 100vh * ${ lengthSlides } * ${ heightScroller } )` );
+    let slideIndex: number = undefined as unknown as number;
     $( window ).on( "scroll", () => {
 
         let offset: percentage = (
@@ -301,32 +302,37 @@ $( async () => {
         document.getElementById( `mapContainer` )?.animate( keyframesMapContainer, options );
         document.getElementById( `infoBox` )?.animate( keyframesInfoBox, options );
         const index: index = Math.floor( offset * lengthSlides ) - 1;
-        if( index < 0 ) {
+        if( slideIndex != index ) {
 
-            $( `#info` ).hide();
-            $( `#header` ).show();
-            $( `#header h1` ).text( `17 Regions of the Philippines` );
-            $( `#header p` ).text( `Just keep scrolling down slowly.` );
+            slideIndex = index;
+            if( index < 0 ) {
 
-        } else if( index >= length ) {
+                $( `#info` ).hide();
+                $( `#header` ).show();
+                $( `#header h1` ).text( `17 Regions of the Philippines` );
+                $( `#header p` ).text( `Just keep scrolling down slowly.` );
 
-            $( `#info` ).hide();
-            $( `#header` ).show();
-            $( `#header h1` ).text( `End of Journey` );
-            $( `#header p` ).text( `""` );
+            } else if( index >= length ) {
 
-        } else {
+                $( `#info` ).hide();
+                $( `#header` ).show();
+                $( `#header h1` ).text( `End of Journey` );
+                $( `#header p` ).text( `""` );
 
-            $( `#header` ).hide();
-            $( `#info` ).css( `display`, `grid` );
-            const
-                { title, coordinates: [ x, y ], description, img } = slidesData[ index ],
-                src: string = img == undefined ? `` : `assets/img/${ img }`
-            ;
-            $( `#info h1` ).text( title );
-            $( `#coordinates` ).text( `${ y }° N, ${ x }° E` );
-            $( `#description` ).text( description ?? `` );
-            $( `#regionImg img` ).attr( `src`,  src );
+            } else {
+
+                $( `#header` ).hide();
+                $( `#info` ).css( `display`, `grid` );
+                const
+                    { title, coordinates: [ x, y ], description, img } = slidesData[ index ],
+                    src: string = img == undefined ? `` : `assets/img/${ img }`
+                ;
+                $( `#info h1` ).text( title );
+                $( `#coordinates` ).text( `${ y }° N, ${ x }° E` );
+                $( `#description` ).text( description ?? `` );
+                $( `#regionImg img` ).attr( `src`,  src );
+
+            }
 
         }
 
