@@ -4,8 +4,10 @@ import { ArrayUtils, CoordinateRef, NumberUtils, MapImage } from "ts-utils";
 type coordinateRef = [ number, int ]
 type coordinates = [ number, number ];
 type slideData = {
-    title?: string,
-    coordinates: coordinates
+    title: string,
+    coordinates: coordinates,
+    description?: string,
+    img?: string
 };
 
 async function loadMap(): Promise< MapImage > {
@@ -48,18 +50,34 @@ function getSlidesData(): slideData[] {
 
     return [
         {
-            coordinates: [ 118, 14 ]
+            title: `National Capital Region (NCR)`,
+            coordinates: [ 121.0223, 14.6091 ],
+            description: "Also known as Metropolitan Manila, is the country’s political, economic, and educational center. The smallest region in the Philippines, it is the most densely populated region which is home to over 13 million Filipinos.",
+            img: "ncr.webp"
         },
         {
-            coordinates: [ 120, 16 ]
+            title: `Cordillera Administrative Region (CAR)`,
+            coordinates: [ 121.1719, 17.3513 ],
+            description: "Is composed of six provinces—Abra, Apayao, Benguet, Ifugao, Kalinga, and Mountain Province; and two cities—Baguio City and Tabuk in Kalinga Province.",
+            img: `car.jpg`
         },
         {
-            coordinates: [ 120, 12 ]
+            title: `Ilocos Region (Region I)`,
+            coordinates: [ 120.6200, 16.0832 ],
+            description: "3"
         },
         {
-            coordinates: [ 122, 18 ]
+            title: `Cagayan Valley (Region II)`,
+            coordinates: [ 121.8107, 16.9754 ],
+            description: "4"
         }
     ];
+
+}
+
+function getOffset( slidesData: slideData[], index: index ) {
+
+    return ( index / ( slidesData.length + 1 ) );
 
 }
 
@@ -70,7 +88,6 @@ function getKeyframesMapContainer( map: MapImage, slidesData: slideData[] ): Key
         getTop = ( width: percentage, y: number ): string =>
             `calc( 50vh - ${ 100 * width }vw * ${ y } / 2965 )`,
         getLeft = ( width: percentage, x: number ): string => `${ 50 - 100 * width * x / 2965 }%`,
-        getOffset = ( index: number ): number => ( index / ( slidesData.length + 1 ) ),
         widthKeyframe1: percentage = 1,
         widthKeyframe2: percentage = 3,
         keyframesSlides: Keyframe[] = slidesData.reduce< Keyframe[] >( ( keyframes, {
@@ -83,13 +100,13 @@ function getKeyframesMapContainer( map: MapImage, slidesData: slideData[] ): Key
                     width: getWidthPercentage( widthKeyframe1 ),
                     top: getTop( widthKeyframe1, y ),
                     left: getLeft( widthKeyframe1, x ),
-                    offset: getOffset( index + 0.5 )
+                    offset: getOffset( slidesData, index + 0.5 )
                 },
                 {
                     width: getWidthPercentage( widthKeyframe2 ),
                     top: getTop( widthKeyframe2, y ),
                     left: getLeft( widthKeyframe2, x ),
-                    offset: getOffset( index + 1 )
+                    offset: getOffset( slidesData, index + 1 )
                 }
             ]
             keyframes.push( ...keyframesAdd );
@@ -115,12 +132,63 @@ function getKeyframesMapContainer( map: MapImage, slidesData: slideData[] ): Key
 
 }
 
+function getKeyframesInfoBox( map: MapImage, slidesData: slideData[] ): Keyframe[] {
+
+    const
+        { length } = slidesData,
+        keyframesSlides: Keyframe[] = slidesData.reduce< Keyframe[] >( ( keyframes, {
+            coordinates: [ x, y ]
+        }, index ) => {
+
+            [ x, y ] = map.pixelsOfCoordinates( x, y, false );
+            const keyframesAdd: Keyframe[] = [
+                {
+                    scale: 0,
+                    offset: getOffset( slidesData, index + 0.25 )
+                },
+                {
+                    scale: 0,
+                    offset: getOffset( slidesData, index + 0.75 )
+                },
+                {
+                    scale: 1,
+                    offset: getOffset( slidesData, index + 1 )
+                }
+            ]
+            keyframes.push( ...keyframesAdd );
+            return keyframes;
+
+        }, [] ),
+        start: Keyframe = {
+            scale: 1,
+            offset: 0
+        },
+        end1: Keyframe = {
+            scale: 0,
+            offset: getOffset( slidesData, length + 0.25 )
+        },
+        end2: Keyframe = {
+            scale: 0,
+            offset: getOffset( slidesData, length + 0.75 )
+        },
+        end3: Keyframe = {
+            scale: 1,
+            offset: 1
+        }
+    ;
+    keyframesSlides.unshift( start );
+    keyframesSlides.push( end1, end2, end3 );
+    return keyframesSlides;
+
+}
+
 $( async () => {
 
     const
         map: MapImage = await loadMap(),
         slidesData: slideData[] = getSlidesData(),
         keyframesMapContainer: Keyframe[] = getKeyframesMapContainer( map, slidesData ),
+        keyframesInfoBox: Keyframe[] = getKeyframesInfoBox( map, slidesData ),
         options: KeyframeAnimationOptions = {
             // direction: "forward",
             duration: 0,
@@ -137,19 +205,50 @@ $( async () => {
     ;
     const
         scroller = $( `#scroller` ),
-        length = slidesData.length + 2,
+        length = slidesData.length,
+        lengthSlides = slidesData.length + 2,
         heightScroller: percentage = 3
     ;
-    scroller.css( `height`, `calc( 100vh * ${ length } * ${ heightScroller } )` );
+    scroller.css( `height`, `calc( 100vh * ${ lengthSlides } * ${ heightScroller } )` );
     $( window ).on( "scroll", () => {
 
         let offset: percentage = (
-            length * ( $( window ).scrollTop() ?? 0 )
-            / ( ( $( "#scroller" ).innerHeight() ?? 1 ) * ( length - 1 ) )
+            lengthSlides * ( $( window ).scrollTop() ?? 0 )
+            / ( ( $( "#scroller" ).innerHeight() ?? 1 ) * ( lengthSlides - 1 ) )
         );
         if( offset > 1 ) offset = 1;
         options.iterationStart = offset;
         document.getElementById( `mapContainer` )?.animate( keyframesMapContainer, options );
+        document.getElementById( `infoBox` )?.animate( keyframesInfoBox, options );
+        const index: index = Math.floor( offset * lengthSlides ) - 1;
+        if( index < 0 ) {
+
+            $( `#info` ).hide();
+            $( `#header` ).show();
+            $( `#header h1` ).text( `17 Regions of the Philippines` );
+            $( `#header p` ).text( `Just keep scrolling down slowly.` );
+
+        } else if( index >= length ) {
+
+            $( `#info` ).hide();
+            $( `#header` ).show();
+            $( `#header h1` ).text( `End of Journey` );
+            $( `#header p` ).text( `""` );
+
+        } else {
+
+            $( `#header` ).hide();
+            $( `#info` ).css( `display`, `grid` );
+            const
+                { title, coordinates: [ x, y ], description, img } = slidesData[ index ],
+                src: string = img == undefined ? `` : `assets/img/${ img }`
+            ;
+            $( `#info h1` ).text( title );
+            $( `#coordinates` ).text( `${ y }° N, ${ x }° E` );
+            $( `#description` ).text( description ?? `` );
+            $( `#regionImg img` ).attr( `src`,  src );
+
+        }
 
     } );
 
