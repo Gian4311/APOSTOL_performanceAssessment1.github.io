@@ -68,15 +68,10 @@ body {
 
 #infoBox {
 
-  width: calc( 80% - 20vw );
-  height: calc( 80% - 20vh );
-  top: 10%;
-  left: 10%;
   background-size: 80vw 80vh;
   background-repeat: no-repeat;
   background-position: center center;
   position: fixed;
-  padding: 10vh 10vw;
 
 }
 
@@ -86,34 +81,11 @@ body {
 
 }
 
-#header h1 {
-
-  font-size: 46pt;
-
-}
-
-#header p {
-
-  font-size: 20pt;
-
-}
-
 #info {
 
   display: none;
   height: 100%;
-  grid:
-    "a b" max-content
-    "c b" 1fr
-    / 1fr 1fr
-  ;
   gap: 0 20pt;
-
-}
-
-#info h1 {
-
-  font-size: 20pt;
 
 }
 
@@ -121,7 +93,6 @@ body {
 
   margin: 0;
   text-align: justify;
-  font-size: 18pt;
 
 }
 
@@ -136,6 +107,7 @@ body {
 
 #regionImg img {
 
+  grid-area: c;
   max-width: 100%;
   max-height: 100%;
 
@@ -145,8 +117,47 @@ body {
   
   #infoBox {
 
+    width: calc( 80% - 20vw );
+    height: calc( 80% - 20vh );
     background-image: url( "../img/scroll1.png" );
+    padding: 10vh 10vw;
+    top: 10%;
+    left: 10%;
 
+  }
+
+  #header h1 {
+
+    font-size: 46pt;
+  
+  }
+
+  #header p {
+
+    font-size: 20pt;
+  
+  }
+
+  #info {
+
+    grid:
+      "a b" max-content
+      "c b" 1fr
+      / 1fr 1fr
+    ;
+  
+  }
+
+  #info h1 {
+
+    font-size: 20pt;
+  
+  }
+
+  #info p {
+
+    font-size: 18pt;
+  
   }
 
 }
@@ -155,8 +166,50 @@ body {
   
   #infoBox {
 
+    width: calc( 80% - 30vw );
+    height: calc( 90% - 20vh );
     background-image: url( "../img/scroll2.png" );
+    padding: 10vh 15vw;
+    top: 5%;
+    left: 10%;
 
+  }
+
+  #header h1 {
+    
+    margin-bottom: 0;
+    font-size: 32pt;
+  
+  }
+
+  #header p {
+
+    font-size: 16pt;
+  
+  }
+
+  #info {
+
+    grid:
+      "a" max-content
+      "b" max-content
+      "c" max-content
+      / 1fr
+    ;
+  
+  }
+
+  #info h1 {
+
+    text-align: center;
+    font-size: 12pt;
+  
+  }
+
+  #info p {
+
+    font-size: 12pt;
+  
   }
 
 }
