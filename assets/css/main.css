@@ -68,7 +68,6 @@ body {
 
 #infoBox {
 
-  background-size: 80vw 80vh;
   background-repeat: no-repeat;
   background-position: center center;
   position: fixed;
@@ -119,6 +118,7 @@ body {
 
     width: calc( 80% - 20vw );
     height: calc( 80% - 20vh );
+    background-size: 80vw 80vh;
     background-image: url( "../img/scroll1.png" );
     padding: 10vh 10vw;
     top: 10%;
@@ -166,12 +166,13 @@ body {
   
   #infoBox {
 
-    width: calc( 80% - 30vw );
-    height: calc( 90% - 20vh );
+    width: calc( 100% - 30vw );
+    height: calc( 90% - 12.5vh );
+    background-size: 100vw 80vh;
     background-image: url( "../img/scroll2.png" );
-    padding: 10vh 15vw;
+    padding: 12.5vh 15vw 0;
     top: 5%;
-    left: 10%;
+    left: 0%;
 
   }
 
@@ -201,6 +202,7 @@ body {
 
   #info h1 {
 
+    margin-bottom: 0.5em;
     text-align: center;
     font-size: 12pt;
   
