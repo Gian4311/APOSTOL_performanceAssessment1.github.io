@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Gian4311/APOSTOL_performanceAssessment1.github.io#readme",
   "dependencies": {
+    "@types/react": "^18.2.57",
     "esbuild": "^0.20.0",
     "esbuild-plugin-tsc": "^0.4.0",
     "jquery": "^3.7.1",

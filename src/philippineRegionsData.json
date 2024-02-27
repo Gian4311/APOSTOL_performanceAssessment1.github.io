@@ -1,0 +1,140 @@
+{
+    "philippineRegions": [
+        {
+            "id": "ncr",
+            "name": "National Capital Region",
+            "alternateName": "NCR",
+            "coordinates": [ 121.0223, 14.6091 ],
+            "description": "Also known as Metropolitan Manila, is the country’s political, economic, and educational center. The smallest region in the Philippines, it is the most densely populated region which is home to over 13 million Filipinos.",
+            "img": "assets/img/ncr.webp"
+        },
+        {
+            "id": "car",
+            "name": "Cordillera Administrative Region",
+            "alternateName": "CAR",
+            "coordinates": [ 121.1719, 17.3513 ],
+            "description": "Is composed of six provinces—Abra, Apayao, Benguet, Ifugao, Kalinga, and Mountain Province; and two cities—Baguio City and Tabuk in Kalinga Province.",
+            "img": "assets/img/car.jpg"
+        },
+        {
+            "id": "region1",
+            "name": "Ilocos Region",
+            "alternateName": "Region I",
+            "coordinates": [ 120.6200, 16.0832 ],
+            "description": "Is composed of four provinces—Ilocos Norte, Ilocos Sur, La Union and Pangasinan; and of nine cities—Alaminos, Batac, Candon, Laoag, San Carlos, San Fernando, Urdaneta, Vigan, and Dagupan.",
+            "img": "assets/img/region1.jpg"
+        },
+        {
+            "id": "region2",
+            "name": "Cagayan Valley",
+            "alternateName": "Region II",
+            "coordinates": [ 121.8107, 16.9754 ],
+            "description": "Is composed of five (5) provinces –Batanes, Cagayan, Isabela, Quirino, and Nueva Vizcaya; and four cities: Tuguegarao, Cauayan, Ilagan, and Santiago.",
+            "img": "assets/img/region2.jpg"
+        },
+        {
+            "id": "region3",
+            "name": "Central Luzon",
+            "alternateName": "Region III",
+            "coordinates": [ 120.7120, 15.4828 ],
+            "description": "Is composed of seven provinces—Aurora, Bataan, Bulacan, Nueva Ecija, Pampanga, Tarlac, and Zambales; and fourteen cities.",
+            "img": "assets/img/region3.jpg"
+        },
+        {
+            "id": "region4A",
+            "name": "Calabarzon",
+            "alternateName": "Region IV-A",
+            "coordinates": [ 121.0794, 14.1008 ],
+            "description": "Is composed of the provinces of Cavite, Laguna, Batangas, Rizal, and Quezon.",
+            "img": "assets/img/region4A.jpg"
+        },
+        {
+            "id": "region4B",
+            "name": "Southwestern Tagalog Region (Mimaropa)",
+            "alternateName": "Region IV-B",
+            "coordinates": [ 118.7365, 9.8432 ],
+            "description": "Is composed of the provinces of Mindoro (Occidental and Oriental), Marinduque, Romblon, and Palawan. There are two cities—Calapan and Puerto Princesa—and 71 municipalities in the entire region.",
+            "img": "assets/img/region4B.jpg"
+        },
+        {
+            "id": "region5",
+            "name": "Bicol Region",
+            "alternateName": "Region V",
+            "coordinates": [ 123.4137, 13.4210 ],
+            "description": "Is composed of four contiguous provinces: Albay, Camarines Sur, Camarines Norte, and Sorsogon; two island provinces of Catanduanes and Masbate; and seven cities namely, Legazpi, Naga, Iriga, Tabaco, Ligao, Sorsogon, and Masbate.",
+            "img": "assets/img/region5.jpg"
+        },
+        {
+            "id": "region6",
+            "name": "Western Visayas",
+            "alternateName": "Region VI",
+            "coordinates": [ 122.5373, 11.0050 ],
+            "description": "Is composed of six provinces: Aklan, Antique, Capiz, Guimaras, Iloilo, and Negros Occidental.",
+            "img": "assets/img/region6.png"
+        },
+        {
+            "id": "region7",
+            "name": "Central Visayas",
+            "alternateName": "Region VII",
+            "coordinates": [ 124.0641, 9.8169 ],
+            "description": "Is composed of four provinces: Cebu, Bohol, Negros Oriental, and Siquijor.",
+            "img": "assets/img/region7.jpg"
+        },
+        {
+            "id": "region8",
+            "name": "Eastern Visayas",
+            "alternateName": "Region VIII",
+            "coordinates": [ 125.0388, 12.2446 ],
+            "description": "Is composed of six provincial offices in Leyte, Southern Leyte, Biliran, Samar, Eastern Samar, and Northern Samar.",
+            "img": "assets/img/region8.webp"
+        },
+        {
+            "id": "region9",
+            "name": "Zamboanga Peninsula",
+            "alternateName": "Region IX",
+            "coordinates": [ 123.2588, 8.1541 ],
+            "description": "Is composed of five provincial offices: Zamboanga City, Zamboanga del Sur, Zamboanga del Norte, Zamboanga Sibugay, and Isabela City.",
+            "img": "assets/img/region9.jpg"
+        },
+        {
+            "id": "region10",
+            "name": "Northern Mindanao",
+            "alternateName": "Region X",
+            "coordinates": [ 124.6857, 8.0202 ],
+            "description": "Is composed of two cities—Cagayan de Oro City and Iligan City; and five provinces—Camiguin, Misamis Oriental, Lanao del Norte, Bukidnon and Misamis Occidental.",
+            "img": "assets/img/region10.jpg"
+        },
+        {
+            "id": "region11",
+            "name": "Davao Region",
+            "alternateName": "Region XI",
+            "coordinates": [ 126.0893, 7.3042 ],
+            "description": "It is composed of five provinces – Davao del Sur, Davao del Norte, Davao Oriental, Davao Occidental and Compostela Valley. It also boasts of six cities – Davao, Tagum, Island Garden City of Samal, Panabo, Mati and Digos.",
+            "img": "assets/img/region11.jpg"
+        },
+        {
+            "id": "region12",
+            "name": "Soccsksargen",
+            "alternateName": "Region XII",
+            "coordinates": [ 124.6857, 6.2707 ],
+            "description": "Is composed of four provinces—North Cotabato, South Cotabato, Sarangani Province, and Sultan Kudarat; and five cities—Koronadal, Tacurong, General Santos, Kidapawan, and Cotabato.",
+            "img": "assets/img/region12.jpg"
+        },
+        {
+            "id": "region13",
+            "name": "Caraga",
+            "alternateName": "Region XIII",
+            "coordinates": [ 125.7407, 8.8015 ],
+            "description": "Is composed of five provinces—Agusan del Norte, Agusan del Sur, Surigao del Norte, Surigao del Sur, and Dinagat Islands; and six cities—Butuan, Surigao, Bislig, Tandag, Cabadbaran, and Bayugan.",
+            "img": "assets/img/caraga.webp"
+        },
+        {
+            "id": "barmm",
+            "name": "Bangsamoro",
+            "alternateName": "BARMM",
+            "coordinates": [ 124.24514, 7.19708 ],
+            "description": "Is an autonomous region located in the southern Philippines. It composed of five provinces: Basilan, Lanao del Sur, Maguindanao, Sulu, and Tawi‑Tawi.",
+            "img": "assets/img/barmm.jpg"
+        }
+    ]
+}

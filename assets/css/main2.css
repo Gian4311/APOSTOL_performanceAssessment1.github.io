@@ -1,0 +1,180 @@
+.ignore {
+
+    display: none!important;
+
+}
+
+* {
+
+    font-family: papyrus;
+  
+}
+
+.grid {
+
+    display: grid;
+  
+}
+
+body {
+
+    margin: 0;
+    overflow-x: hidden;
+
+}
+
+#mapContainer {
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+#map {
+
+    width: 100%;
+
+}
+
+.flag {
+
+    display: block;
+    width: 5vw;
+    height: calc( 5vw * 1000 / 443 );
+    background-image: url( "../img/knife.png" );
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    translate: -50% -75%;
+
+}
+
+#filler {
+
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+
+#info {
+
+    display: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+    height: 100%;
+    gap: 0 20pt;
+  
+}
+  
+#info p {
+
+    margin: 0;
+    overflow-y: auto;
+  
+}
+
+#description {
+
+    text-align: justify;
+
+}
+  
+#regionImg {
+
+    grid-area: b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+  
+#regionImg img {
+
+    grid-area: c;
+    max-width: 100%;
+    max-height: 100%;
+  
+}
+
+@media only screen and ( min-width: 800px ) {
+
+    #info {
+
+        width: calc( 80% - 20vw );
+        height: calc( 80% - 20vh );
+        background-size: 80vw 80vh;
+        background-image: url( "../img/scroll1.png" );
+        padding: 10vh 10vw;
+        grid:
+            "a b" max-content
+            "c b" 1fr
+            / 1fr 1fr
+        ;
+        top: 10%;
+        left: 10%;
+        
+    }
+
+    #info h1 {
+
+        font-size: 20pt;
+    
+    }
+
+    #info p {
+
+        height: 100%;
+        font-size: 16pt;
+    
+    }
+
+}
+
+@media only screen and ( max-width: 800px ) {
+  
+    #infoBox {
+  
+        width: calc( 100% - 30vw );
+        height: calc( 90% - 12.5vh );
+        background-size: 100vw 80vh;
+        background-image: url( "../img/scroll2.png" );
+        padding: 12.5vh 15vw 0;
+        top: 5%;
+        left: 0%;
+  
+    }
+  
+    #info {
+  
+        grid:
+            "a" max-content
+            "b" max-content
+            "c" max-content
+            / 1fr
+        ;
+    
+    }
+  
+    #info h1 {
+  
+        margin-bottom: 0.5em;
+        text-align: center;
+        font-size: 12pt;
+    
+    }
+  
+    #info p {
+  
+        height: 75%;
+        font-size: 12pt;
+    
+    }
+  
+}
