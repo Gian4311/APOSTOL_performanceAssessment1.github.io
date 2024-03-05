@@ -36,6 +36,12 @@ function addMouseOutZoomOut( flag: JQuery< HTMLElement >, duration: int ) {
 
 }
 
+async function openInfoBox() {
+
+    
+
+}
+
 async function loadFlags(): Promise< Flag[] > {
 
     const flags: Flag[] = regions.map( ( region, index ) => {

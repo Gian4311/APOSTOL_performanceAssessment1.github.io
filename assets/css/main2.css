@@ -48,6 +48,7 @@ body {
     background-repeat: no-repeat;
     position: absolute;
     translate: -50% -75%;
+    cursor: pointer;
 
 }
 
@@ -139,7 +140,7 @@ body {
 
 @media only screen and ( max-width: 800px ) {
   
-    #infoBox {
+    #info {
   
         width: calc( 100% - 30vw );
         height: calc( 90% - 12.5vh );
